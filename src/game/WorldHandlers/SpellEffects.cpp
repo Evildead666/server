@@ -1511,6 +1511,8 @@ void Spell::EffectApplyAura(SpellEffectIndex eff_idx)
     if (!unitTarget)
         { return; }
 
+    if (m_spellInfo->Id == 20594)                           // Stoneform Racial
+        { m_caster->CastSpell(m_caster, 20612, true); }
     if (m_spellInfo->Id == 30918)                           // Improved Sprint
     {
         // Don't need to apply any actual aura here, just remove snare and root effects from the target!
